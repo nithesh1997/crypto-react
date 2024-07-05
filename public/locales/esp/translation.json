@@ -1,0 +1,159 @@
+{
+    "api": {
+      "active_cryptocurrencies": "Criptomonedas Activas",
+      "in_market_coins": "Monedas en el Mercado",
+      "total_market_cap": "Capitalización Total del Mercado",
+      "total_volume": "Volumen Total",
+      "market_cap_change_percentage_24h_usd": "Porcentaje de capitalización de mercado"
+    },
+    "landingHeader": {
+      "cryptos": "Criptomonedas",
+      "exchanges": "Intercambios",
+      "marketcap": "Capitalización de mercado",
+      "24vol": "Vol. 24h",
+      "dominance": "Dominancia",
+      "ethGas": "Gas ETH",
+      "gwei": "Gwei",
+      "login": "Acceso",
+      "signup": "Registrarse",
+      "Volume24h": "Volumen (24h)",
+      "Volmar24hr": "Volumen/Capitalización de mercado (24h)",
+      "circulatingsupply": "Suministro circulante",
+      "totalsupply": "Suministro total",
+      "Maxsupply": "Suministro máximo",
+      "coinsymbol": "Símbolo de la moneda",
+      "actualprice": "Precio actual",
+      "predictedprice": "Precio predicho"
+    },
+    "ribbon": {
+      "brand": "Crypto538",
+      "learn": "Aprender",
+      "Cryptocurrencies": "Criptomonedas",
+      "Exchanges": "Intercambios",
+      "Community": "Comunidad",
+      "Products": "Productos",
+      "home": "Inicio",
+      "about": "Acerca",
+      "contact": "Contacto"
+    },
+    "markdetails": {
+      "TodaysCryptocurrencyPricesbyMarketCap": "Precios de Criptomonedas de Hoy por Capitalización de Mercado",
+      "todayprice": "Los precios de las criptomonedas de hoy por capitalización de mercado son",
+      "a": "un",
+      "change": "cambio en las últimas 24 horas",
+  
+      "readmore": "Leer Más"
+    },
+    "carsoul": {
+      "top": "Destacado",
+      "ico": "Resumen de ICO",
+      "trending": "Tendencias",
+      "recentlyadded": "Recientemente Agregado",
+      "topcommunity": "Publicación Comunitaria Destacada",
+      "topcommuntiyartilces": "Artículos Principales de la Comunidad",
+      "freedndgreedindex": "Índice de Miedo y Avaricia",
+      "upcoicos": "Próximas ICO",
+      "ongoingicos": "ICO en curso",
+      "enicos": "ICO terminadas"
+    },
+    "table": {
+      "rank": "Rango",
+      "search": "Buscar",
+      "name": "Nombre",
+      "marketcap": "Capitalización de Mercado",
+      "price": "Precio",
+      "1hr": "1 hora",
+      "24hr": "24 horas",
+      "7d": "7 días",
+      "past": "Pasado",
+      "Predicted": "Predicho",
+      "last_seven_days": "Últimos siete días",
+      "changes": "Cambios",
+      "actual": "Actual"
+    },
+    "loginpage": {
+      "emailaddres": "Correo Electrónico",
+      "enteremail": "Ingrese Correo Electrónico",
+      "pass": "Contraseña",
+      "enpass": "Ingrese Contraseña",
+      "forpass": "Olvidé Contraseña",
+      "login": "Iniciar Sesión",
+      "dhaa": "¿No tienes una cuenta?",
+      "creacc": "Crear Cuenta"
+    },
+    "subplan": "Plan de suscripción",
+    "signup": {
+      "formLabels": {
+        "sign_up": "Registrarse",
+        "fname": "Nombre",
+        "lname": "Apellido",
+        "email": "Su dirección de correo electrónico",
+        "password": "Contraseña",
+        "reenterPassword": "Vuelva a escribir la contraseña",
+        "agreeTerms": "Acepto los términos y condiciones"
+      },
+      "buttons": {
+        "signup": "Registrarse"
+      },
+      "subscriptionPlans": {
+        "basic": {
+          "name": "Plan Básico",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+        },
+        "standard": {
+          "name": "Plan Estándar",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+        },
+        "enterprise": {
+          "name": "Plan Empresarial",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+        }
+      }
+    },
+    "coinsdetails": {
+      "price": "Precio",
+      "24hrhigh": "Máximo en 24h",
+      "24hrlo": "Mínimo en 24h",
+      "marcap24hr": "Market Cap 24hr",
+      "pri1hr": "Precio en 1 Hora",
+      "pri7d": "Precio en 7 Días",
+      "pri24hr": "Precio en 24 Horas",
+      "volume": "Volumen",
+      "alltimehigh": "Máximo Histórico",
+      "allitmehighper": "Cambio desde el Máximo Histórico",
+      "alltimelow": "Mínimo Histórico",
+      "alltimelower": "Cambio desde el Mínimo Low",
+      "webesite": "Sitio web",
+      "Explorers": "Exploradores",
+      "Twitter": "Twitter",
+      "redit": "Reddit",
+      "sourcecode": "Código fuente"
+    },
+  
+    "plan_page": {
+      "plan1": {
+        "a_T_ctp_an": "Acceso a Análisis de Criptomonedas",
+        "a_PFfor_": "Acceso a Predicciones (Para los próximos 30 minutos con intervalos de 1 minuto)",
+        "acce_14_hist": "Acceso a 14 días de datos históricos"
+      },
+      "plan2": {
+        "n_ad": "Sin anuncios",
+        "a_t_c_a": "Acceso a Análisis de Criptomonedas",
+        "a_t_p_f_t_n_1_m": "Acceso a Predicciones (Para los próximos 120 minutos con intervalos de 15 segundos, 30 segundos y 1 minuto)",
+        "a_t__his": "Acceso a datos históricos completos",
+        "o_f_p_a_s": "Oportunidad de Asociaciones y Patrocinios",
+        "l_c_w_a_a": "Chat en vivo con un Analista",
+        "o_d_a_t_a": "Agente de trading automatizado a pedido",
+        "m_15": "$15/m",
+        "y_1_2_m_f": "$150/año (2 meses gratis)",
+        "y_w_1_d": "Descuento del 10% (autopago habilitado): $135/año",
+        "e_e_c_a_t_c": "Contenido exclusivo por correo electrónico sobre las tendencias de criptomonedas",
+        "y_1_5_0_2_m_o": "$150/año (2 meses gratis)",
+        "y_w_10_d_135": "Descuento del 10% (autopago habilitado): $135/año"
+      },
+      "price": "Precios",
+      "month": "Mensual",
+      "annualy": "Anualmente"
+    }
+  }
+  
