@@ -1,0 +1,158 @@
+{
+  "api": {
+    "active_cryptocurrencies": "Active crypto",
+    "in_market_coins": "Market",
+    "total_market_cap": "Total Marketcap",
+    "total_volume": "Total Volume",
+    "market_cap_change_percentage_24h_usd": "Market Cap percentage"
+  },
+  "landingHeader": {
+    "cryptos": "Crypto",
+    "exchanges": "Exchanges",
+    "marketcap": "Market Cap",
+    "24vol": "24 Vol",
+    "dominance": "Dominance",
+    "ethGas": "ETH Gas",
+    "gwei": "Gwei",
+    "login": "Log In ",
+    "signup": "sign Up",
+    "Volume24h": "Volume (24h)",
+    "Volmar24hr": "Volume/Marketcap(24h)",
+    "circulatingsupply": "Circulating supply",
+    "totalsupply": "Total supply",
+    "Maxsupply": "Max. supply",
+    "coinsymbal": "Coin Symbol",
+    "actualprice": "Actual Price",
+    "predictedprice": "Predicted price"
+  },
+  "ribbon": {
+    "brand": "Crypto538",
+    "learn": "Learn",
+    "Cryptocurrencies": "Cryptocurrencies",
+    "Exchanges": "Exchanges",
+    "Community": "Community",
+    "Products": "Products",
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "markdetails": {
+    "TodaysCryptocurrencyPricesbyMarketCap": "Today's Cryptocurrency Prices by Market Cap",
+    "todayprice": "Today's Cryptocurrency Prices by Market Cap is",
+    "a": "a",
+    "change": "change over the last 24 Hours",
+
+    "readmore": "Read More"
+  },
+  "carsoul": {
+    "top": "Top",
+    "ico": "ICO Overview",
+    "trending": "Trending",
+    "recentlyadded": "Recently Added",
+    "topcommunity": "Top Community Post",
+    "topcommuntiyartilces": "Top Community Articles",
+    "freedndgreedindex": "Freed and Geed Index",
+    "upcoicos": "Upcoming ICOs",
+    "ongoingicos": "Ongoing ICOs",
+    "enicos": "Ended ICOs"
+  },
+  "table": {
+    "rank": "Rank",
+    "search": "Search",
+    "name": "Name",
+    "marketcap": "Market Cap",
+    "price": "Price",
+    "1hr": "1hr",
+    "24hr": "24hr",
+    "7d": "7d",
+    "past": "Past",
+    "Predicted": "Predicted",
+    "last_seven_days": "Last Seven Days",
+    "changes": "Changes",
+    "actual": "Actual"
+  },
+  "loginpage": {
+    "emailaddres": "Email Address",
+    "enteremail": "Enter Email",
+    "pass": "PassWord",
+    "enpass": "Enter PassWord",
+    "forpass": "Forgot Password?",
+    "login": "Log In ",
+    "dhaa": "Dont`t Have an Account ?",
+    "creacc": "Create Account"
+  },
+  "subplan": "Subscription plan",
+  "signup": {
+    "formLabels": {
+      "sign_up": "Sign up",
+      "fname": "First Name",
+      "lname": "Last Name",
+      "email": "Your Email address",
+      "password": "Password",
+      "reenterPassword": "Re-enter Password",
+      "agreeTerms": "I agree to the terms and conditions"
+    },
+    "buttons": {
+      "signup": "Sign Up"
+    },
+    "subscriptionPlans": {
+      "basic": {
+        "name": "Basic Plan",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+      },
+      "standard": {
+        "name": "Standard Plan",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+      },
+      "enterprise": {
+        "name": "Enterprise Plan",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+      }
+    }
+  },
+  "coinsdetails": {
+    "price": "Price",
+    "24hrhigh": "24hr High",
+    "24hrlo": "24hr Low",
+    "marcap24hr": "Marketcap change (24hr)",
+    "marcapChange24hr": "Marketcap change (24hr)",
+    "pri1hr": "Price change (1hr)",
+    "pri7d": "Price change (7d)",
+    "pri24hr": "Price change (24hr)",
+    "volume": "Volume",
+    "alltimehigh": "All Time High",
+    "allitmehighper": "All Time Change High",
+    "alltimelow": "All Time Low",
+    "alltimelower": "All Time Change Low",
+    "webesite": "Website",
+    "Explorers": "Explorers",
+    "Twitter": "Twitter",
+    "redit": "Reddit",
+    "sourcecode": "Source Code"
+  },
+  "plan_page": {
+    "plan1": {
+      "a_T_ctp_an": "Access to Cryptocurrency Analytics",
+      "a_PFfor_": "Access to Predictions (For the next 30 minutes with 1-minuteinterval)",
+      "acce_14_hist": "Access to 14 days of historical data"
+    },
+    "plan2": {
+      "n_ad": "No ads",
+      "a_t_c_a": "Access to Cryptocurrency Analytics",
+      "a_t_p_f_t_n_1_m": " Access to Predictions (For the next 120 minutes with 15sec,30sec, and 1-minute intervals)",
+      "a_t__his": "Access to complete Historical data",
+      "o_f_p_a_s": "Opportunity for Partnerships and Sponsorships",
+      "l_c_w_a_a": "Live chat with an Analyst",
+      "o_d_a_t_a": "On-demand automated trading agent",
+      "m_15": "$15/m",
+      "y_1_2_m_f": "$150/y (2 months free)",
+      "y_w_1_d": "10% discount (autopay enabled): $135/y",
+      "e_e_c_a_t_c": "Exclusive email content about the crypto trends",
+      "y_1_5_0_2_m_o": "$150/y (2 months free)",
+      "y_w_10_d_135": " 10% discount (autopay enabled): $135/y"
+    },
+    "price": "Pricing",
+    "month": "Monthly",
+    "annualy": "Annualy"
+  }
+}
