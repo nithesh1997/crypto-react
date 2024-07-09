@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from "react";
 import HoverBoxHeading from "./HoverBoxHeading";
 import LinkList from "./LinkList";
 import { useTranslation } from "react-i18next";
-import img from "../../photos/logo2.png";
+import img from "../../assets/logo2.png";
 import { useNavigate } from "react-router-dom";
 
 const LandingPageHeader2 = ({ toShow }) => {

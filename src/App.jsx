@@ -1,20 +1,24 @@
 import React, { useEffect } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Auth from "./pages/auth";
+
 import PrivateRoute from "./PrivateRoute";
 import Landing from "./pages/Landing/Landing";
-import "../src/style/globalStyle.css";
-import Home from "./pages/home";
-import About from "./pages/About";
-import CoinDetails from "./pages/CoinDetails";
-import Contact from "./pages/Contact";
-import SignupPage from "./pages/Component/Signup";
+// import "../src/style/globalStyle.css";
+// Styles
+import "style/globalStyle.css"
+
+
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { setTabledata, setcarsoul, setHeaderData } from "./languageSlice";
-import Planpage from "./pages/Component/PlanPage";
+import { setTabledata, setcarsoul, setHeaderData } from "./store/languageSlice";
+
 import { SnackbarProvider } from "notistack";
+
+
+// Spinner Component
+import LazySpinner from "components/Spinner";
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -37,7 +41,7 @@ const App = () => {
 
       console.log(headerdata.data, carsoul.data.coins, toplossdata.data, "checking_values")
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.log("Error fetching data:", error);
     }
   };
 
@@ -50,25 +54,16 @@ const App = () => {
 
   return (
     <div>
-      {
         <SnackbarProvider
           anchorOrigin={{ vertical: "top", horizontal: "right" }}
           autoHideDuration={2000}
         >
-          <BrowserRouter>
-            <Routes>
-              {/* <Route path="*" Component={Landing} /> */}
-              <Route path="/login" Component={Auth} />
-              <Route path="/signup" element={<SignupPage />} />
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/coindetails" element={<CoinDetails />} />
-              <Route path="/plan" element={<Planpage />} />
-            </Routes>
-          </BrowserRouter>
+           <React.Suspense fallback={<LazySpinner/>}>
+                  <Outlet />
+                </React.Suspense>
+
+               
         </SnackbarProvider>
-      }
     </div>
   );
 };

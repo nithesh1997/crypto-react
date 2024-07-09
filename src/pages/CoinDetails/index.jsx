@@ -1,29 +1,29 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Container, Row, Col, Card, CardBody } from "react-bootstrap";
-import Checkbox from "./Checkbox";
-import CoinInfo from "./coinInfo";
-import CoinAnalysis from "./CoinAnalysis";
-import DoubleLine from "./DoubleLine";
-import MultiLine from "./MultiLine";
+import Checkbox from "../../components/Checkbox";
+import CoinInfo from "../../components/coinInfo";
+import CoinAnalysis from "../../components/CoinAnalysis";
+import DoubleLine from "../../components/DoubleLine";
+import MultiLine from "../../components/MultiLine";
 
-import MultiselectCheckbox from "./MultiselectCheckbox";
-import cData from "../data/sampleCoinData.json";
-import { TestData } from "../Helper/Helper";
-import ListOfData from "../data/expectedDataFormat.json";
-import NavBar from "../NavBar";
-import Communtypostcoinsdetails from "./Component/Communtypostcoinsdetails";
-import SocialMediapost from "./Component/Social Media post";
+import MultiselectCheckbox from "../../components/MultiselectCheckbox";
+import cData from "src/data/sampleCoinData.json";
+import { TestData } from "../../Helper/Helper";
+import ListOfData from "src/data/expectedDataFormat.json";
+import NavBar from "../Navbar/NavBar";
+import Communtypostcoinsdetails from "../Component/Communtypostcoinsdetails";
+import SocialMediapost from "../Component/Social Media post";
 import { useTranslation } from "react-i18next";
 
 import { useSelector } from "react-redux";
 // import i18n from "../Helper/i18next";
-import PredictionChart from "./Component/PredictionChart";
-import { TestSingleData } from "../Helper/Helper";
-import TimeBasedPredictionChart from "./Component/TimeBasedPredictionChart";
-import Header from "./Component/Header";
-import LandingPageHeader2 from "./Component/LandinpageHeader2";
-import Header2 from "./Component/Header2";
+import PredictionChart from "../Component/PredictionChart";
+import { TestSingleData } from "src/Helper/Helper";
+import TimeBasedPredictionChart from "../Component/TimeBasedPredictionChart";
+import Header from "../Component/Header";
+import LandingPageHeader2 from "../Component/LandinpageHeader2";
+import Header2 from "../Component/Header2";
 const SampleData = ListOfData.data;
 
 const CoinDetails = () => {

@@ -7,8 +7,9 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import "./navbar.css";
 // import i18n from "./Helper/i18next";
-import LinkList from "./pages/Component/LinkList";
-import img from "../src/photos/logo2.png";
+import LinkList from "../Component/LinkList";
+// import img from "../src/assets/logo2.png";
+import img from "src/assets/logo2.png";
 
 const NavBar = () => {
   const Exchangesdata = [

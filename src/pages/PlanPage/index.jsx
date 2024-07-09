@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import img from "../../photos/logo2.png";
+import img from "../../assets/logo2.png";
 // import i18n from "../../Helper/i18next";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";

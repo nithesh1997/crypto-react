@@ -3,8 +3,6 @@ import react from "@vitejs/plugin-react-swc";
 import macrosPlugin from "vite-plugin-babel-macros";
 import svgr from "vite-plugin-svgr";
 
-
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), macrosPlugin(), svgr()],
   build: {
@@ -15,7 +13,12 @@ export default defineConfig({
     alias: {
       src: "/src",
       components: "/src/components",
-      pages:"/src/pages"
+      pages:"/src/pages",
+      style:"/src/style",
+      store:"/src/store",
+      utils:"/src/utils",
+      routes: "/src/routes",
+      "@i18n": "/src/i18n.js",
     },
   },
 })

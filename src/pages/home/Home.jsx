@@ -1,10 +1,10 @@
 import React, { Component, useState, useEffect } from "react";
 import { ListGroup } from "react-bootstrap";
-import cData from "../../data/sampleCoinData.json";
+import cData from "src/data/sampleCoinData.json";
 import { useNavigate } from "react-router-dom";
 import Pagination from "react-bootstrap/Pagination";
 import "./home.css";
-import NavBar from "../../NavBar";
+import NavBar from "../Navbar/NavBar";
 import { useTranslation } from "react-i18next";
 import LanderpageTable from "../Component/LanderpageTable";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,7 +12,7 @@ import { useSelector, useDispatch } from "react-redux";
 import LandingPageHeader2 from "../Component/LandinpageHeader2";
 import ContentLandingpage from "../Component/contentLandingpage";
 import Header2 from "../Component/Header2";
-import { setauth } from "../../languageSlice";
+import { setauth } from "../../store/languageSlice";
 import Header from "../Component/Header";
 const Home = () => {
   const { t } = useTranslation();

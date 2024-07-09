@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 // import i18n from "../../Helper/i18next";
-import img from "../../photos/logo2.png";
+import img from "../../assets/logo2.png";
 import { Link } from "react-router-dom";
 import { enqueueSnackbar } from "notistack";
 

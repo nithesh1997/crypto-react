@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useTranslation } from "react-i18next";
-import { setLanguage, setauth } from "../../languageSlice";
+import { setLanguage, setauth } from "../../store/languageSlice";
 import { useDispatch, useSelector } from "react-redux";
 // import i18n from "../../Helper/i18next";
 const Header = () => {
