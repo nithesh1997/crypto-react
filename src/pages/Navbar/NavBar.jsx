@@ -19,7 +19,7 @@ const NavBar = () => {
   ];
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const currentLanguage = useSelector((state) => state.currentLanguage);
+  const currentLanguage = useSelector((state) => state.language.currentLanguage);
   const [Cryptocurrenciesbox, setCryptocurrenciesbox] = useState(false);
 
   const handleLogOut = () => {

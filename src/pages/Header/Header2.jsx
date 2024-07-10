@@ -4,19 +4,21 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import React, { Component, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import img from "../../assets/logo2.png";
+import img from "assets/logo2.png";
 import { Link, useNavigate } from "react-router-dom";
-import { setLanguage, setauth } from "../../store/languageSlice";
+// import { setLanguage, setauth } from "../../store/languageSlice";
+import { setLanguage, setauth } from "src/store/languageSlice";
 import { useDispatch, useSelector } from "react-redux";
 // import i18n from "../../Helper/i18next";
 import { enqueueSnackbar } from "notistack";
+import { setUser } from "src/store/userSlice";
 
 function Header2() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const currentLanguage = useSelector((state) => state.currentLanguage);
-  const isLoggedIn = useSelector((state) => state.auth);
+  const currentLanguage = useSelector((state) => state.language.currentLanguage);
+  const isLoggedIn = useSelector((state) => state.language.auth);
   const [selectedOption_lang, setSelectedOption_lang] =
     useState(currentLanguage);
   const handleOptionChange_lang = (e) => {
@@ -36,6 +38,11 @@ function Header2() {
     dispatch(setauth(false));
     navigate("/");
   };
+
+  const userSignout = () =>{
+     sessionStorage.setItem("profile-preferences",null)
+     dispatch(setUser(null))
+  }
   return (
     <div className="head  heding_text_size ">
       <Navbar
@@ -86,6 +93,8 @@ function Header2() {
                   {t("landingHeader.signup")}
                 </Nav.Link>
               )}
+
+
               <NavDropdown
                 title={t("ribbon.Cryptocurrencies")}
                 id="basic-nav-dropdown"
@@ -148,10 +157,19 @@ function Header2() {
 
                 <div
                   className="log_in_box h-auto d-flex align-content-center flex-wrap "
-                  style={{ backgroundColor: "darkgray" }}
+                  style={{ backgroundColor: "darkgray"}}
                 >
                   <Link className="remove_dec text-white" to="/signup">
                     {t("landingHeader.signup")}
+                  </Link>
+                </div>
+
+                <div
+                  className="log_in_box h-auto d-flex align-content-center flex-wrap "
+                  style={{ backgroundColor: "darkgray" }}
+                >
+                  <Link className="remove_dec text-white" to="/login" onClick={()=> userSignout()}>
+                    {t("landingHeader.signout")}
                   </Link>
                 </div>
               </>

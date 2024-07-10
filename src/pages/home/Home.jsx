@@ -11,14 +11,14 @@ import { useSelector, useDispatch } from "react-redux";
 // import i18n from "../../Helper/i18next";
 import LandingPageHeader2 from "../Component/LandinpageHeader2";
 import ContentLandingpage from "../Component/contentLandingpage";
-import Header2 from "../Component/Header2";
+import Header2 from "../Header/Header2";
 import { setauth } from "../../store/languageSlice";
-import Header from "../Component/Header";
+import Header from "../Header/Header";
 const Home = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const currentLanguage = useSelector((state) => state.currentLanguage);
+  const currentLanguage = useSelector((state) => state.language.currentLanguage);
 
   const navigate = useNavigate();
   const [data, setData] = useState([]);

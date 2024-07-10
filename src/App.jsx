@@ -3,14 +3,17 @@ import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import PrivateRoute from "./PrivateRoute";
-import Landing from "./pages/Landing/Landing";
+import Landing from "./pages/Landing";
 // import "../src/style/globalStyle.css";
 // Styles
 import "style/globalStyle.css"
 
 
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+// import { setTabledata, setcarsoul, setHeaderData } from "./store/languageSlice";
+
+
 import { setTabledata, setcarsoul, setHeaderData } from "./store/languageSlice";
 
 import { SnackbarProvider } from "notistack";
@@ -20,8 +23,12 @@ import { SnackbarProvider } from "notistack";
 import LazySpinner from "components/Spinner";
 
 
+import { setUser } from "./store/userSlice";
+
+
 const App = () => {
   const dispatch = useDispatch();
+  
 
   const fetchData = async () => {
     try {
@@ -39,7 +46,6 @@ const App = () => {
       );
       dispatch(setTabledata(toplossdata.data));
 
-      console.log(headerdata.data, carsoul.data.coins, toplossdata.data, "checking_values")
     } catch (error) {
       console.log("Error fetching data:", error);
     }
@@ -48,9 +54,13 @@ const App = () => {
 
   useEffect(()=>{
     fetchData();
+
+   let profilePreferences = JSON.parse(sessionStorage.getItem("profile-preferences"));
+
+   dispatch(setUser(profilePreferences));
   },[])
 
- 
+
 
   return (
     <div>
@@ -60,7 +70,7 @@ const App = () => {
         >
            <React.Suspense fallback={<LazySpinner/>}>
                   <Outlet />
-                </React.Suspense>
+            </React.Suspense>
 
                
         </SnackbarProvider>

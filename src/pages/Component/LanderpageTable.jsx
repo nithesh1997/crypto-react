@@ -6,14 +6,14 @@ import { useSelector } from "react-redux";
 import ReactApexChart from "react-apexcharts";
 import { useNavigate } from "react-router-dom";
 const CoinTable = () => {
-  const apidata = useSelector((state) => state.tabeldata);
+  const apidata = useSelector((state) => state.language.tabeldata);
   const { t } = useTranslation();
   const coins = apidata;
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(0);
   const [rowsPerPage] = useState(25);
-  const isLoggedIn = useSelector((state) => state.auth);
+  const isLoggedIn = useSelector((state) => state.language.auth);
   const handleChangePage = (newPage) => {
     setPage(newPage);
   };

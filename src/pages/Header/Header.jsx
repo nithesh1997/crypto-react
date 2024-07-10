@@ -5,15 +5,15 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useTranslation } from "react-i18next";
-import { setLanguage, setauth } from "../../store/languageSlice";
+import { setLanguage, setauth } from "src/store/languageSlice";
 import { useDispatch, useSelector } from "react-redux";
 // import i18n from "../../Helper/i18next";
 const Header = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const currentLanguage = useSelector((state) => state.currentLanguage);
-  const apidata = useSelector((state) => state.headerdata?.data);
+  const currentLanguage = useSelector((state) => state.language.currentLanguage);
+  const apidata = useSelector((state) => state.language.headerdata?.data);
   const [selectedOption_lang, setSelectedOption_lang] =
     useState(currentLanguage);
   const [selectedOption_curency, setSelectedOption_curency] = useState("USD");

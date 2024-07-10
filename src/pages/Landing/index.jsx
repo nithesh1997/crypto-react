@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Header from "../Component/Header";
+import Header from "../Header/Header";
 import LandingPageHeader2 from "../Component/LandinpageHeader2";
 import ContentLandingpage from "../Component/contentLandingpage";
 import LanderpageTable from "../Component/LanderpageTable";
-import Header2 from "../Component/Header2";
+import Header2 from "../Header/Header2";
 import { useDispatch } from "react-redux";
-import { setauth } from "../../store/languageSlice";
+import { setauth } from "src/store/languageSlice";
 
 const LandingPage = () => {
   const [error, setError] = useState(false);

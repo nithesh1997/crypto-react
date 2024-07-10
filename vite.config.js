@@ -18,6 +18,7 @@ export default defineConfig({
       store:"/src/store",
       utils:"/src/utils",
       routes: "/src/routes",
+      assets:"/src/assets",
       "@i18n": "/src/i18n.js",
     },
   },

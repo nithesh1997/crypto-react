@@ -7,7 +7,7 @@ import i18n from "../../Helper/i18next";
 
 function Plan() {
   const { t } = useTranslation();
-  const currentLanguage = useSelector((state) => state.currentLanguage);
+  const currentLanguage = useSelector((state) => state.language.currentLanguage);
   const [isChecked, setIsChecked] = useState(false);
   useEffect(() => {
     i18n.changeLanguage(currentLanguage);

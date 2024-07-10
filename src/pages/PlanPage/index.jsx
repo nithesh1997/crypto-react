@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 function Planpage() {
-  const lang = useSelector((state) => state.currentLanguage);
-  const auth = useSelector((state) => state.auth);
+  const lang = useSelector((state) => state.language.currentLanguage);
+  const auth = useSelector((state) => state.language.auth);
   const { t } = useTranslation();
   const [period, setPeriod] = useState(false);
   const navigate = useNavigate();

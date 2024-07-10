@@ -21,14 +21,14 @@ import { useSelector } from "react-redux";
 import PredictionChart from "../Component/PredictionChart";
 import { TestSingleData } from "src/Helper/Helper";
 import TimeBasedPredictionChart from "../Component/TimeBasedPredictionChart";
-import Header from "../Component/Header";
+import Header from "../Header/Header";
 import LandingPageHeader2 from "../Component/LandinpageHeader2";
-import Header2 from "../Component/Header2";
+import Header2 from "../Header/Header2";
 const SampleData = ListOfData.data;
 
 const CoinDetails = () => {
   const location = useLocation();
-  const currentLanguage = useSelector((state) => state.currentLanguage);
+  const currentLanguage = useSelector((state) => state);
 
   // useEffect(() => {
   //   i18n.changeLanguage(currentLanguage);
