@@ -6,7 +6,7 @@ import axios from "axios";
 const CoinInfo = ({ name, id }) => {
   const navigate = useNavigate();
   const [coinData, setCoinData] = useState({});
-  // const glo_state_dta = useSelector((state) => state.tabeldata);
+  // const glo_state_dta = useSelector((state) => state.tabeldata?.data);
 
   // // var sepcoin =[];
   // // if(glo_state_dta){

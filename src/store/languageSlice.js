@@ -9,8 +9,16 @@ export const languageSlice = createSlice({
       error: "",
       isLoading: false
     },
-    tabeldata: null,
-    carsoul1: [],
+    tabeldata: {
+      data: null,
+      error: '',
+      isLoading: false
+    },
+    carsoul1: {
+      data:[],
+      error:"",
+      isLoading:false
+    },
     auth: initialAuthState,
   },
   reducers: {

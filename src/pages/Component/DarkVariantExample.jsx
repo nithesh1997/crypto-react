@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 function DarkVariantExample() {
-  const trendingcoin = useSelector((state) => state.language.carsoul1);
+  const trendingcoin = useSelector((state) => state.language.carsoul1?.data);
   const icosdata = useSelector((state) => state.language.headerdata?.data?.data);
-  const top = useSelector((state) => state.language.tabeldata);
+  const top = useSelector((state) => state.language?.tabeldata?.data);
 
   const [cgainto_dolortrillion, setcgainto_dolortrillion] = useState({});
 

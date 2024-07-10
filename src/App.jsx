@@ -49,10 +49,18 @@ const { data: globalData, error: globalError, isLoading: globalLoading } = useGe
       }));
     }
     if (trendingData) {
-      dispatch(setcarsoul(trendingData.coins));
+      dispatch(setcarsoul({
+        data:trendingData.coins,
+        error:trendingError,
+        isLoading: trendingLoading
+      }));
     }
     if (marketsData) {
-      dispatch(setTabledata(marketsData));
+      dispatch(setTabledata({
+        data:marketsData,
+        error:marketsError,
+        isLoading:marketsLoading
+      }));
     }
   }, [globalData, trendingData, marketsData]);
 

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import ReactApexChart from "react-apexcharts";
 import { useNavigate } from "react-router-dom";
 const CoinTable = () => {
-  const apidata = useSelector((state) => state.language.tabeldata);
+  const apidata = useSelector((state) => state.language.tabeldata?.data);
   const { t } = useTranslation();
   const coins = apidata;
   const navigate = useNavigate();
