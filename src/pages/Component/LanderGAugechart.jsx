@@ -19,7 +19,7 @@ const styles = {
 
 const Speedometer = ({ id, value, title }) => {
   const apidata = useSelector(
-    (state) => state.language?.headerdata?.data?.data?.market_cap_change_percentage_24h_usd
+    (state) => state.generalData?.headerdata?.data?.data?.market_cap_change_percentage_24h_usd
   );
 
   const { t } = useTranslation();

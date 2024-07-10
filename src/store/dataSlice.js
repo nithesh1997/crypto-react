@@ -9,7 +9,7 @@ export const dataSlice = createSlice({
             isLoading: false
         },
         tabeldata: {
-            data: [],
+            data: null,
             error: '',
             isLoading: false
         },

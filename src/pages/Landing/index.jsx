@@ -5,7 +5,7 @@ import ContentLandingpage from "../Component/contentLandingpage";
 import LanderpageTable from "../Component/LanderpageTable";
 import Header2 from "../Header/Header2";
 import { useDispatch } from "react-redux";
-import { setauth } from "src/store/languageSlice";
+import { setauth } from "src/store/dataSlice"; 
 
 const LandingPage = () => {
   const [error, setError] = useState(false);

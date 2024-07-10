@@ -11,10 +11,9 @@ import "style/globalStyle.css"
 
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-// import { setTabledata, setcarsoul, setHeaderData } from "./store/languageSlice";
 
 
-import { setTabledata, setcarsoul, setHeaderData } from "./store/languageSlice";
+import { setTabledata, setcarsoul, setHeaderData } from "./store/dataSlice";
 
 import { SnackbarProvider } from "notistack";
 

@@ -8,6 +8,7 @@ import { configureStore } from '@reduxjs/toolkit';
 // import langReducer from "store/languageSlice";
 import languageSlice from './store/languageSlice';
 import userSlice from 'store/userSlice';
+import dataSlice from './store/dataSlice';
 
 // React Router
 import { RouterProvider } from "react-router-dom";
@@ -32,6 +33,7 @@ const store = configureStore({
   reducer: {
     language:languageSlice,
     user:userSlice,
+    generalData: dataSlice,
      [commonApi.reducerPath]: commonApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

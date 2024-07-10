@@ -12,7 +12,7 @@ import { useSelector, useDispatch } from "react-redux";
 import LandingPageHeader2 from "../Component/LandinpageHeader2";
 import ContentLandingpage from "../Component/contentLandingpage";
 import Header2 from "../Header/Header2";
-import { setauth } from "../../store/languageSlice";
+import { setauth } from "src/store/dataSlice"; 
 import Header from "../Header/Header";
 const Home = () => {
   const { t } = useTranslation();

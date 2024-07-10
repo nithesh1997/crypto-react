@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import LoginValidationSchema from "./Login.validation";
 import img from "src/assets/logo2.png";
-import { setauth } from "store/languageSlice";
+import { setauth } from "src/store/dataSlice"; 
 import { enqueueSnackbar } from "notistack";
 import whoAmI from "src/utils/whoAmI";
 import { setUser } from "src/store/userSlice";

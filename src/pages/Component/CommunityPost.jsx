@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 function CommunityPost() {
-  const apidata = useSelector((state) => state.language.carsoul1?.data);
+  const apidata = useSelector((state) => state.generalData.carsoul1?.data);
   const data = apidata.slice(0, 2);
   const { t } = useTranslation();
   const formatNumber = (number) => {

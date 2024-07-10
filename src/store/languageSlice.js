@@ -4,43 +4,15 @@ export const languageSlice = createSlice({
   name: "language",
   initialState: {
     currentLanguage: "en",
-    headerdata: {
-      data: {},
-      error: "",
-      isLoading: false
-    },
-    tabeldata: {
-      data: null,
-      error: '',
-      isLoading: false
-    },
-    carsoul1: {
-      data:[],
-      error:"",
-      isLoading:false
-    },
-    auth: initialAuthState,
   },
   reducers: {
     setLanguage: (state, action) => {
       state.currentLanguage = action.payload;
     },
-    setHeaderData: (state, action) => {
-      state.headerdata = action.payload;
-    },
-    setTabledata: (state, action) => {
-      state.tabeldata = action.payload;
-    },
-    setcarsoul: (state, action) => {
-      state.carsoul1 = action.payload;
-    },
-    setauth: (state, action) => {
-      state.auth = action.payload;
-    },
   },
 });
 
-export const { setLanguage, setHeaderData, setTabledata, setcarsoul, setauth } =
+export const { setLanguage } =
   languageSlice.actions;
 
 export default languageSlice.reducer;
