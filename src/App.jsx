@@ -41,8 +41,12 @@ const { data: globalData, error: globalError, isLoading: globalLoading } = useGe
   const { data: marketsData, error: marketsError, isLoading: marketsLoading } = useGetMarketsQuery();
   
   useEffect(() => {
-    if (globalData) {
-      dispatch(setHeaderData(globalData));
+   if (globalData) {
+      dispatch(setHeaderData({
+        data:globalData,
+        error:globalError,
+        isLoading:globalLoading
+      }));
     }
     if (trendingData) {
       dispatch(setcarsoul(trendingData.coins));

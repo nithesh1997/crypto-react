@@ -13,7 +13,7 @@ const Header = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const currentLanguage = useSelector((state) => state.language.currentLanguage);
-  const apidata = useSelector((state) => state.language.headerdata?.data);
+  const apidata = useSelector((state) => state.language.headerdata?.data?.data);
   const [selectedOption_lang, setSelectedOption_lang] =
     useState(currentLanguage);
   const [selectedOption_curency, setSelectedOption_curency] = useState("USD");

@@ -4,7 +4,11 @@ export const languageSlice = createSlice({
   name: "language",
   initialState: {
     currentLanguage: "en",
-    headerdata: null,
+    headerdata: {
+      data: {},
+      error: "",
+      isLoading: false
+    },
     tabeldata: null,
     carsoul1: [],
     auth: initialAuthState,

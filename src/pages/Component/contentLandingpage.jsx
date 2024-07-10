@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 function ContentLandingpage() {
   const { t } = useTranslation();
-  const apidata = useSelector((state) => state.language.headerdata?.data);
+  const apidata = useSelector((state) => state.language.headerdata?.data?.data);
   const formatNumber = (number) => {
     const suffixes = ["", "K", "M", "B", "T"];
     let suffixNum = 0;
