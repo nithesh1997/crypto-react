@@ -1,26 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Form, Pagination } from "react-bootstrap";
 import data from "../../data/sampleCoinData.json";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import ReactApexChart from "react-apexcharts";
 import { useNavigate } from "react-router-dom";
+import ContentSpinner from "src/components/ContentSpinner";
+
+
+
 const CoinTable = () => {
-  const apidata = useSelector((state) => state.generalData.tabeldata?.data);
+  const apidata = useSelector((state) => state.generalData.tabeldata);
   const { t } = useTranslation();
   const coins = apidata;
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
+  const [pageCount,setPageCount] = useState(10)
   const [rowsPerPage] = useState(25);
+  const [dataPagination,setDataPagination] = useState({})
+  // const [activePagination,setActivePagination] = useState(1)
   const isLoggedIn = useSelector((state) => state.language.auth);
+
+  
   const handleChangePage = (newPage) => {
     setPage(newPage);
   };
 
-  const filteredCoins = coins?.filter((coin) =>
-    coin.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+// let apidataPagination = []
+
+  useEffect(()=>{
+    if(apidata?.data?.length){
+      let count = 1;
+    let apidataPagination =  apidata?.data?.reduce((acc,cur,index)=>{
+    if(index%pageCount ==0 && index !=0){
+    count++;
+    acc[count] = [cur]
+    }else{
+    acc[count] = acc[count] ? [...acc[count],cur]: [cur]
+    }
+    return acc
+    },{})
+    setDataPagination(apidataPagination)
+    }
+  },[apidata?.data?.length, pageCount])
+
+
+  // const filteredCoins = coins?.data?.filter((coin) =>
+  //   coin.name.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
+
+
   const formatNumber = (number) => {
     const suffixes = ["", "K", "M", "B", "T"];
     let suffixNum = 0;
@@ -93,7 +123,7 @@ const CoinTable = () => {
             className="custom_input_search_box_lander_table"
           />
         </Form.Group>
-        <div className="w-100">
+        <div className="w-100" style={{position:'relative'}}>
           <Table
             striped
             responsive
@@ -123,6 +153,7 @@ const CoinTable = () => {
                     </div>
                   </div>
                 </th>
+
                 {isLoggedIn && (
                   <th colSpan="3">
                     <div className="d-flex flex-column">
@@ -147,12 +178,12 @@ const CoinTable = () => {
                 <th>{t("table.last_seven_days")}</th>
               </tr>
             </thead>
+            
+            {apidata.isLoading && <div style={{position:'absolute', left:"620px", top:"100px"}}><ContentSpinner/></div>}
             {!isLoggedIn && (
               <tbody>
-                {filteredCoins &&
-                  filteredCoins
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map((coin) => (
+                {
+                    dataPagination[page]?.map((coin) => (
                       <tr key={coin?.market_cap_rank}>
                         <td className="fixed-column">
                           {coin?.market_cap_rank}
@@ -426,20 +457,38 @@ const CoinTable = () => {
           </Table>
         </div>
       </div>
-      <Pagination className="justify-content-center">
-        {Array.from(
+      <div style={{display:"flex", justifyContent:"space-evenly"}}>
+            <Pagination className="justify-content-center">
+        {/* {Array.from(
           { length: Math.ceil(filteredCoins?.length / rowsPerPage) },
           (_, i) => (
-            <Pagination.Item
-              key={i}
-              active={i === page}
-              onClick={() => handleChangePage(i)}
-            >
-              {i + 1}
-            </Pagination.Item>
+           
           )
-        )}
+        )} */}
+        {Object.keys(dataPagination).map(e=>(
+           <Pagination.Item
+              key={e}
+              active={e == page}
+              onClick={() => handleChangePage(e)}
+            >
+              {e}
+            </Pagination.Item>
+        ))}
+        
       </Pagination>
+      <div>
+        {apidata?.data?.length && <>
+        <Form.Select size="sm" style={{ width: '70px' }} onChange={(e)=>setPageCount(e.target.value)}>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+        <option>30</option>
+      </Form.Select>
+        </>}
+    
+      </div>
+      </div>
+      
     </div>
   );
 };

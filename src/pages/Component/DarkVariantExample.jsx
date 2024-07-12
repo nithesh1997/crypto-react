@@ -3,56 +3,61 @@ import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import ContentSpinner from "src/components/ContentSpinner";
 
 function DarkVariantExample() {
-  const trendingcoin = useSelector((state) => state.generalData.carsoul1?.data);
+  const trendingcoin = useSelector((state) => state.generalData.carsoul1);
   const icosdata = useSelector((state) => state.generalData.headerdata?.data?.data);
-  const top = useSelector((state) => state.generalData?.tabeldata?.data);
+  let trendingcoinData = trendingcoin?.data;
+  let top = useSelector((state) => state.generalData?.tabeldata?.data);
+
+  top = top?.length ? top : []
 
   const [cgainto_dolortrillion, setcgainto_dolortrillion] = useState({});
 
   const indicatorLabels = ["e", "Second Slide", "Third Slide"];
   const { t } = useTranslation();
   useEffect(() => {
-    if (trendingcoin != null && trendingcoin.length) {
+    if (trendingcoinData != null && trendingcoinData.length) {
       setcgainto_dolortrillion({
         a: (
           parseFloat(
-            trendingcoin[0]?.item.data.market_cap?.replace(/\$|,/g, "")
+           trendingcoinData?.length && trendingcoinData[0]?.item.data.market_cap?.replace(/\$|,/g, "")
           ) / 1e12
         ).toFixed(5),
         b: (
           parseFloat(
-            trendingcoin[1]?.item.data.market_cap?.replace(/\$|,/g, "")
+           trendingcoinData?.length && trendingcoinData[1]?.item.data.market_cap?.replace(/\$|,/g, "")
           ) / 1e12
         ).toFixed(5),
         c: (
           parseFloat(
-            trendingcoin[2]?.item.data.market_cap?.replace(/\$|,/g, "")
+           trendingcoinData?.length && trendingcoinData[2]?.item.data.market_cap?.replace(/\$|,/g, "")
           ) / 1e12
         ).toFixed(5),
         d: (
           parseFloat(
-            trendingcoin[3]?.item.data.market_cap?.replace(/\$|,/g, "")
+           trendingcoinData?.length && trendingcoinData[3]?.item.data.market_cap?.replace(/\$|,/g, "")
           ) / 1e12
         ).toFixed(5),
         e: (
           parseFloat(
-            trendingcoin[4]?.item.data.market_cap?.replace(/\$|,/g, "")
+          trendingcoinData?.length &&  trendingcoinData[4]?.item.data.market_cap?.replace(/\$|,/g, "")
           ) / 1e12
         ).toFixed(5),
         f: (
           parseFloat(
-            trendingcoin[5]?.item.data.market_cap?.replace(/\$|,/g, "")
+          trendingcoinData?.length &&  trendingcoinData[5]?.item.data.market_cap?.replace(/\$|,/g, "")
           ) / 1e12
         ).toFixed(5),
       });
     }
-  }, [trendingcoin]);
+  }, [trendingcoinData]);
 
   return (
     <div className="h-100">
-      {top && (
+
+      { top && (
         <Carousel
           controls={false}
           indicators={true}
@@ -98,7 +103,9 @@ function DarkVariantExample() {
 
 
       </Carousel.Item> */}
-          <Carousel.Item className="carousel_in_main">
+
+    
+        <Carousel.Item className="carousel_in_main">
             <div className="h-100 d-flex flex-column justify-content-center p-3">
               <div>
                 <h6 style={{ color: "black" }}>
@@ -111,7 +118,8 @@ function DarkVariantExample() {
                 </h6>
               </div>
               <div>
-                <Table variant="light">
+                  {trendingcoin.isLoading ? <div style={{marginTop:"50px"}}><ContentSpinner/></div> : <>
+                   <Table variant="light">
                   <thead>
                     <th>Name</th>
                     <th>Price</th>
@@ -119,30 +127,32 @@ function DarkVariantExample() {
                   <tbody>
                     <tr>
                       <td>
-                        <img src={top[0].image} width={20} />{" "}
-                        {top && top[0].name}
+                        <img src={top.length && top[0].image} width={20} />{" "}
+                        {top.length && top[0].name}
                       </td>
 
-                      <td>${top && top[0].current_price}</td>
+                      <td>${top.length && top[0].current_price}</td>
                     </tr>
                     <tr>
                       <td>
-                        <img src={top[1].image} width={20} />{" "}
-                        {top && top[1].name}
+                        <img src={top.length && top[1].image} width={20} />{" "}
+                        {top.length && top[1].name}
                       </td>
 
-                      <td>${top && top[1].current_price}</td>
+                      <td>${top.length && top[1].current_price}</td>
                     </tr>
                     <tr>
                       <td>
-                        <img src={top[2].image} width={20} />{" "}
-                        {top && top[2].name}
+                        <img src={top.length && top[2].image} width={20} />{" "}
+                        {top.length && top[2].name}
                       </td>
 
-                      <td>${top && top[2].current_price}</td>
+                      <td>${top.length && top[2].current_price}</td>
                     </tr>
                   </tbody>
                 </Table>
+                  </>}
+               
               </div>
             </div>
           </Carousel.Item>
@@ -161,7 +171,8 @@ function DarkVariantExample() {
                 </h6>
               </div>
               <div>
-                <Table variant="light">
+                  {trendingcoin.isLoading ? <div style={{marginTop:"50px"}}><ContentSpinner/></div> : <>
+                   <Table variant="light">
                   <tbody>
                     <tr>
                       <td>{t("carsoul.upcoicos")}</td>
@@ -181,9 +192,13 @@ function DarkVariantExample() {
                     </tr>
                   </tbody>
                 </Table>
+                  </>}
+               
               </div>
             </div>
           </Carousel.Item>
+    
+        
         </Carousel>
       )}
     </div>

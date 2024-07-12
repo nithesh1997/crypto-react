@@ -38,30 +38,61 @@ const App = () => {
 const { data: globalData, error: globalError, isLoading: globalLoading } = useGetGlobalQuery();
   const { data: trendingData, error: trendingError, isLoading: trendingLoading } = useGetTrendingQuery();
   const { data: marketsData, error: marketsError, isLoading: marketsLoading } = useGetMarketsQuery();
+
+  // console.log(globalData,globalError,globalLoading,"globalData")
   
-  useEffect(() => {
-   if (globalData) {
-      dispatch(setHeaderData({
+  // useEffect(() => {
+  //  if (globalData) {
+  //     dispatch(setHeaderData({
+  //       data:globalData,
+  //       error:globalError,
+  //       isLoading:globalLoading
+  //     }));
+  //   }
+  //   if (trendingData) {
+  //     dispatch(setcarsoul({
+  //       data:trendingData.coins,
+  //       error:trendingError,
+  //       isLoading: trendingLoading
+  //     }));
+  //   }
+  //   if (marketsData) {
+  //     dispatch(setTabledata({
+  //       data:marketsData,
+  //       error:marketsError,
+  //       isLoading:marketsLoading
+  //     }));
+  //   }
+  // }, [globalData, trendingData, marketsData]);
+
+
+  useEffect(()=>{
+    dispatch(setHeaderData({
         data:globalData,
         error:globalError,
         isLoading:globalLoading
       }));
-    }
-    if (trendingData) {
+  },[globalData, globalError, globalLoading])
+
+
+  useEffect(()=>{
+
+    console.log(trendingData,"trendingData")
       dispatch(setcarsoul({
-        data:trendingData.coins,
+        data:trendingData?.coins,
         error:trendingError,
         isLoading: trendingLoading
       }));
-    }
-    if (marketsData) {
-      dispatch(setTabledata({
+  },[trendingData, trendingError, trendingLoading])
+
+
+  useEffect(()=>{
+          dispatch(setTabledata({
         data:marketsData,
         error:marketsError,
         isLoading:marketsLoading
       }));
-    }
-  }, [globalData, trendingData, marketsData]);
+  },[marketsData, marketsError, marketsLoading])
 
 
 

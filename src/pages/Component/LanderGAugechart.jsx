@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactSpeedometer from "react-d3-speedometer";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+
 const styles = {
   dial: {
     display: "inline-block",
@@ -19,7 +20,9 @@ const styles = {
 
 const Speedometer = ({ id, value, title }) => {
   const apidata = useSelector(
-    (state) => state.generalData?.headerdata?.data?.data?.market_cap_change_percentage_24h_usd
+    (state) =>
+      state.generalData?.headerdata?.data?.data
+        ?.market_cap_change_percentage_24h_usd
   );
 
   const { t } = useTranslation();
@@ -46,8 +49,8 @@ const Speedometer = ({ id, value, title }) => {
             startColor="red"
             segments={10}
             maxSegmentLabels={10}
-            labelFontSize={10}
-            valueTextFontSize={10}
+            labelFontSize={"10"}
+            valueTextFontSize={"10"}
             endColor="green"
             textColor="black"
             height={150}
