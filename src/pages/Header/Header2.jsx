@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import i18n from "../../Helper/i18next";
 import { enqueueSnackbar } from "notistack";
 import { setUser } from "src/store/userSlice";
+import Avatar from 'components/Avatar'; 
 
 function Header2() {
   const { t } = useTranslation();
@@ -20,6 +21,8 @@ function Header2() {
   const dispatch = useDispatch();
   const currentLanguage = useSelector((state) => state.language.currentLanguage);
   const isLoggedIn = useSelector((state) => state.language.auth);
+  const userDetails = useSelector((state) => state.user);
+
   const [selectedOption_lang, setSelectedOption_lang] =
     useState(currentLanguage);
   const handleOptionChange_lang = (e) => {
@@ -147,10 +150,19 @@ function Header2() {
               </>
             ) : (
               <>
-                <div
+               <div>
+                    <Avatar
+                  src="https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png"
+                  alt="Avatar"
+                  size="50px"
+                  />
+                </div>
+                <p style={{display:"flex",justifyContent:"center",alignItems:"center", marginTop:"10px", fontSize:"1.1rem", gap:"2"}}>{userDetails.userDisplayName}</p>
+                {/* <div
                   className="log_in_box h-auto d-flex  align-content-center flex-wrap"
                   style={{ backgroundColor: "darkgray" }}
                 >
+                 
                   <Link className="remove_dec text-white" to="/login">
                     {t("landingHeader.login")}
                   </Link>
@@ -163,16 +175,18 @@ function Header2() {
                   <Link className="remove_dec text-white" to="/signup">
                     {t("landingHeader.signup")}
                   </Link>
-                </div>
+                </div> */}
 
                 <div
                   className="log_in_box h-auto d-flex align-content-center flex-wrap "
-                  style={{ backgroundColor: "darkgray" }}
+                  style={{ backgroundColor: "darkgray", marginLeft:"20px" }}
                 >
                   <Link className="remove_dec text-white" to="/login" onClick={()=> userSignout()}>
-                    {t("landingHeader.signout")}
+                  {t("landingHeader.signout")}
                   </Link>
+
                 </div>
+                
               </>
             )}
           </div>
